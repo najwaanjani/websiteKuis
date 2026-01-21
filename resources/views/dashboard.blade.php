@@ -23,7 +23,7 @@ https://templatemo.com/tm-606-string-master
     <div class="nav-container">
       <a href="#" class="logo">
         <div class="logo-icon">♪</div>
-        StringMaster
+        Kuis
       </a>
       <ul class="nav-links">
         <li><a href="#features">Features</a></li>
@@ -31,7 +31,7 @@ https://templatemo.com/tm-606-string-master
         <li><a href="#instructors">Instructors</a></li>
         <li><a href="#testimonials">Reviews</a></li>
       </ul>
-      <a href="#pricing" class="nav-cta"><span>Start Free Trial</span></a>
+      <a href="#pricing" class="nav-cta"><span>Login</span></a>
       <button class="mobile-menu-btn">☰</button>
     </div>
   </nav>
@@ -41,10 +41,10 @@ https://templatemo.com/tm-606-string-master
   <section class="hero">
     <div class="hero-container">
       <div class="hero-content">
-        <div class="hero-badge">
+        <!-- <div class="hero-badge">
           <span>●</span> New: AI-powered chord recognition
-        </div>
-        <h1>Master guitar with <span class="highlight">interactive</span> lessons</h1>
+        </div> -->
+        <h1>Interactive Quiz <span class="highlight">anytime</span> and <span class="highlight">anywhere</span></h1>
         <p class="hero-description">
           Learn at your own pace with our visual fretboard trainer. 
           From beginner chords to advanced techniques — all in one platform.
