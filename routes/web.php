@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LandingPageController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -15,9 +15,13 @@ Route::get('/index', function () {
 Route::get('/', [LandingPageController::class, 'landingPage']);
 
 //user
-Route::get('/show', [UserController::class, 'show']);
-Route::get('/create', [UserController::class, 'create']);
-Route::post('/add', [UserController::class, 'add']);
-Route::get('/user/edit/{id}', [UserController::class, 'edit']);
-Route::post('/user/update/{id}', [UserController::class, 'update']);
-Route::get('/user/delete/{id}', [UserController::class, 'delete']);
+Route::get('/admin', [AdminController::class, 'dashboard']);
+Route::get('/admin/tabeluser', [AdminController::class, 'showUsers']);
+Route::get('/admin/tabeluser/create', [AdminController::class, 'createUsers']);
+Route::post('/admin/tabeluser/add', [AdminController::class, 'addUsers']);
+Route::get('/admin/tabeluser/edit/{id}', [AdminController::class, 'editUsers']);
+Route::post('/admin/tabeluser/update/{id}', [AdminController::class, 'updateUsers']);
+Route::get('/admin/tabeluser/delete/{id}', [AdminController::class, 'deleteUsers']);
+
+// Route::get('/admin/tabeluser',  [AdminController::class, 'dashboard']);
+// Route::get('/admin/tabelkuis',  [AdminController::class, 'dashboard']);
