@@ -1,64 +1,20 @@
 <?php
 
 namespace App\Http\Controllers;
-	
-use Illuminate\Support\Facades\DB;
-//use Illuminate\Container\Attributes\DB;
+
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function show()
+    public function register()
     {
-        $user = DB::table('users')->get();
-
-        return view('user.showData', compact('user'));
+        return view('user.register');
     }
 
-    public function create()
+    public function login()
     {
-        return view('user.create');
+        return view('user.login');
     }
 
-    public function add(Request $request)
-    {
-        DB::table('users')->insert([
-            'username' => $request->username,
-            'nama' => $request->nama,
-            'email' => $request->email,
-            //'password' => bcrypt($request->password),
-            'password' => $request->password,
-            'role' => $request->role
-        ]);
-
-        return redirect('/show');
-    }
-
-    public function edit($id)
-    {
-        $userId = DB::table('users')->where('id', $id)->get();
-
-        return view('user.edit', compact('userId'));
-    }
-
-    public function update(Request $request, $id)
-    {
-        DB::table('users')->where('id', $id)->update([
-            'username' => $request->username,
-            'nama' => $request->nama,
-            'email' => $request->email,
-            //'password' => bcrypt($request->password),
-            'password' => $request->password,
-            'role' => $request->role
-        ]);
-
-        return redirect('/show');
-    }
-
-    public function delete($id)
-    {
-        DB::table('users')->where('id', $id)->delete();
-
-        return redirect('/show');
-    }
+    
 }
