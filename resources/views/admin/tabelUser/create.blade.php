@@ -1,36 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <h1>Create User</h1>
-    <form action="/add" method="POST">
-        @csrf
-        <label for="username">Username:</label>
-        <input type="text" name="username" id="username">
-        <br>
-        <label for="nama">Name:</label>
-        <input type="text" name="nama" id="nama">
-        <br>
-        <label for="email">Email:</label>
-        <input type="email" name="email" id="email">
-        <br>
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password">
-        <br>
-        <label for="role">Role:</label>
-        <input type="text" name="role" id="role">
-        <br>
-        <button type="submit">Submit</button>
-    </form>
-</body>
-
-</html> -->
 @extends('admin.sidebar')
 @section('content')
 <!--begin::App Main-->
@@ -60,7 +27,7 @@
         <div class="container-fluid">
             <!--begin::Row-->
             <div class="row g-4">
-                <form action="/add" method="post">
+                <form action="/admin/tabeluser/add" method="post">
                     @csrf
                     <div class="col-md-12">
                         <!--begin::Input Group-->
@@ -79,13 +46,13 @@
                                 name="username"
                             />
                             </div>
-                            <label for="nama" class="form-label">Nama:</label>
+                            <label for="name" class="form-label">Nama:</label>
                             <div class="input-group mb-3">
                             <input
                                 type="text"
                                 class="form-control"
                                 aria-describedby="basic-addon2"
-                                name="nama"
+                                name="name"
                             />
                             </div>
                             <label for="email" class="form-label">Email:</label>
@@ -96,6 +63,15 @@
                                 aria-describedby="basic-addon2"
                                 placeholder="example@gmail.com"
                                 name="email"
+                            />
+                            </div>
+                            <label for="password" class="form-label">Password:</label>
+                            <div class="input-group mb-3">
+                            <input
+                                type="password"
+                                class="form-control"
+                                aria-describedby="basic-addon2"
+                                name="password"
                             />
                             </div>
                             <fieldset class="row mb-2">

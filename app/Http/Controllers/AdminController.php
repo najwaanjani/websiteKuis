@@ -11,6 +11,10 @@ class AdminController extends Controller
     public function dashboard()
     {
         $no = 1;
+        $totalUser = DB::table('users')->count();
+        $totalAdmin = DB::table('users')->where('role', 'Admin')->count();
+        $totalUmum = DB::table('users')->where('role', 'Umum')->count();
+        $totalKuis = DB::table('kuis')->count();
         $showUser = DB::table('users')->get();
         $showAdmin = DB::table('users')->where('role', 'Admin')->get();
         $showUmum = DB::table('users')->where('users.role', 'Umum')
@@ -22,13 +26,15 @@ class AdminController extends Controller
         ->select('kuis.*', 'users.username')
         ->get();
 
-        return view('admin.dashboard', compact('no', 'showUser', 'showAdmin', 'showUmum', 'showKuis'));
+        return view('admin.dashboard', compact('no', 'showUser', 'showAdmin', 'showUmum', 'showKuis', 'totalAdmin', 'totalUmum', 'totalKuis', 'totalUser'));
     }
 
     public function showUsers()
     {
         $no = 1;
-        $user = DB::table('users')->get();
+        $user = DB::table('users')->join('umum', 'users.id', '=', 'umum.id_users')
+        ->select('users.*', 'umum.*')
+        ->get();
         return view('admin.tabelUser.show', compact('user', 'no'));
     }
 
@@ -43,7 +49,7 @@ class AdminController extends Controller
                 $roleOpt[] = $v;
             }
         }
-        // dd($roleOpt);
+
         return view('admin.tabelUser.create', compact('roleOpt'));
     }
 
@@ -51,11 +57,17 @@ class AdminController extends Controller
     {
         DB::table('users')->insert([
             'username' => $request->username,
-            'nama' => $request->nama,
+            'name' => $request->name,
             'email' => $request->email,
-            //'password' => bcrypt($request->password),
-            'password' => $request->password,
+            'password' => bcrypt($request->password),
             'role' => $request->role
+        ]);
+
+        DB::table('umum')->insert([
+            'id_users' => DB::getPdo()->lastInsertId(),
+            'total_kuis' => 0,
+            'total_jawab' => 0,
+            'total_poin' => 0
         ]);
 
         return redirect('/admin/tabeluser');
@@ -64,28 +76,36 @@ class AdminController extends Controller
     public function editUsers($id)
     {
         $userId = DB::table('users')->where('id', $id)->get();
+        $roleOpt = DB::select('SHOW COLUMNS FROM users WHERE Field = "role"');
+        foreach ($roleOpt as $row) {
+            preg_match('/enum\((.*)\)/', $row->Type, $matches);
+            $roleOpt = [];
+            foreach (explode(',', $matches[1]) as $value) {
+                $v = trim($value, "'");
+                $roleOpt[] = $v;
+            }
+        }
 
-        return view('user.edit', compact('userId'));
+        return view('admin.tabelUser.edit', compact('userId', 'roleOpt'));
     }
 
     public function updateUsers(Request $request, $id)
     {
         DB::table('users')->where('id', $id)->update([
             'username' => $request->username,
-            'nama' => $request->nama,
+            'name' => $request->name,
             'email' => $request->email,
-            //'password' => bcrypt($request->password),
-            'password' => $request->password,
+            'password' => bcrypt($request->password),
             'role' => $request->role
         ]);
 
-        return redirect('/show');
+        return redirect('/admin/tabeluser');
     }
 
     public function deleteUsers($id)
     {
         DB::table('users')->where('id', $id)->delete();
 
-        return redirect('/show');
+        return redirect('/admin/tabeluser');
     }
 }

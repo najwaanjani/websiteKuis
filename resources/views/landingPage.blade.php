@@ -1,37 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>StringMaster | Learn Guitar Online</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz | Platform Kuis Gratis Online</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="{{ asset('css/landing-page.css')}}">
-<!--
-
-TemplateMo 606 String Master
-
-https://templatemo.com/tm-606-string-master
-
--->
+  <!--
+    
+  TemplateMo 606 String Master
+  
+  https://templatemo.com/tm-606-string-master
+  
+  -->
 </head>
 <body>
-
+  
   <!-- Navigation -->
   <nav>
     <div class="nav-container">
       <a href="#" class="logo">
-        <div class="logo-icon">♪</div>
-        Kuis
+        <div class="logo-icon">?</div>
+        Quiz
       </a>
-      <ul class="nav-links">
-        <li><a href="#features">Features</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#instructors">Instructors</a></li>
-        <li><a href="#testimonials">Reviews</a></li>
-      </ul>
-      <a href="#pricing" class="nav-cta"><span>Login</span></a>
+      <!-- <ul class="nav-links">
+        <li><a href="#features">Fitur</a></li>
+        <li><a href="#pricing">Harga</a></li>
+        <li><a href="#instructors">Kategori</a></li>
+        <li><a href="#testimonials">Testimoni</a></li>
+      </ul> -->
+      <a href="/profile" class="nav-cta"><span>Profile</span></a>
       <button class="mobile-menu-btn">☰</button>
     </div>
   </nav>
@@ -42,93 +43,38 @@ https://templatemo.com/tm-606-string-master
     <div class="hero-container">
       <div class="hero-content">
         <!-- <div class="hero-badge">
-          <span>●</span> New: AI-powered chord recognition
+          <span>●</span> Baru: AI-powered quiz generator
         </div> -->
-        <h1>Interactive Quiz <span class="highlight">anytime</span> and <span class="highlight">anywhere</span></h1>
+        <h1>Kuis Interaktif <span class="highlight">Kapan Saja</span> dan <span class="highlight">Dimana Saja</span></h1>
         <p class="hero-description">
-          Learn at your own pace with our visual fretboard trainer. 
-          From beginner chords to advanced techniques — all in one platform.
+          Belajar sesuai kecepatan Anda dengan platform kuis interaktif kami. 
+          Dari pengetahuan dasar hingga topik advanced — semua dalam satu platform.
         </p>
         <div class="hero-buttons">
-          <a href="#pricing" class="btn-primary">
-            Start Learning →
-          </a>
-          <a href="#features" class="btn-secondary">
-            See How It Works
+          <a href="/quiz" class="btn-primary">
+            Mulai Kuis →
           </a>
         </div>
         <div class="hero-stats">
           <div class="stat">
-            <div class="stat-value">50K+</div>
-            <div class="stat-label">Active Students</div>
+            <div class="stat-value">1</div>
+            <div class="stat-label">Pengguna Aktif</div>
           </div>
           <div class="stat">
-            <div class="stat-value">200+</div>
-            <div class="stat-label">Video Lessons</div>
+            <div class="stat-value">1</div>
+            <div class="stat-label">Soal Kuis</div>
           </div>
           <div class="stat">
-            <div class="stat-value">4.9</div>
-            <div class="stat-label">App Rating</div>
+            <div class="stat-value">5.0</div>
+            <div class="stat-label">Rating Platform</div>
           </div>
         </div>
       </div>
 
-      <!-- Interactive Guitar -->
+      <!-- Interactive Quiz Demo -->
       <div class="guitar-wrapper">
         <div class="guitar-card">
-          <div class="guitar-header">
-            <span class="guitar-title">Try it — Click a chord</span>
-            <div class="guitar-controls">
-              <button class="chord-btn" data-chord="C">C</button>
-              <button class="chord-btn" data-chord="G">G</button>
-              <button class="chord-btn" data-chord="Am">Am</button>
-              <button class="chord-btn" data-chord="F">F</button>
-              <button class="chord-btn" data-chord="D">D</button>
-              <button class="chord-btn" data-chord="Em">Em</button>
-            </div>
-          </div>
-          <div class="guitar-neck">
-            <div class="fretboard">
-              <div class="nut"></div>
-              <div class="fretboard-grid" id="fretboard">
-                <div class="string-labels">
-                  <div class="string-label">E</div>
-                  <div class="string-label">B</div>
-                  <div class="string-label">G</div>
-                  <div class="string-label">D</div>
-                  <div class="string-label">A</div>
-                  <div class="string-label">E</div>
-                </div>
-                <!-- Frets generated by JS -->
-              </div>
-            </div>
-          </div>
-          <div class="guitar-footer">
-            <div class="guitar-footer-row">
-              <span class="guitar-hint">Click frets to play notes</span>
-              <div class="footer-controls">
-                <button class="clear-btn" id="clearBtn">Clear</button>
-                <div class="sound-toggle">
-                  <span>Sound</span>
-                  <div class="toggle-switch active" id="soundToggle"></div>
-                </div>
-              </div>
-            </div>
-            <div class="song-player">
-              <button class="play-btn" id="playBtn">▶</button>
-              <div class="song-info">
-                <div class="song-title" id="songTitle">Greensleeves</div>
-                <div class="song-progress">
-                  <div class="song-progress-bar" id="progressBar"></div>
-                </div>
-              </div>
-              <select class="song-select" id="songSelect">
-                <option value="greensleeves">Greensleeves</option>
-                <option value="houseoftherisingsun">House of the Rising Sun</option>
-                <option value="amazinggrace">Amazing Grace</option>
-              </select>
-            </div>
-          </div>
+          <div class="guitar-neck"></div>
         </div>
       </div>
     </div>
@@ -138,11 +84,11 @@ https://templatemo.com/tm-606-string-master
   <section class="features" id="features">
     <div class="section-container">
       <div class="section-header">
-        <div class="section-label">Features</div>
-        <h2 class="section-title">Everything you need to learn guitar</h2>
+        <div class="section-label">Fitur</div>
+        <h2 class="section-title">Semua yang Anda butuhkan untuk belajar</h2>
         <p class="section-description">
-          Our platform combines visual learning with hands-on practice 
-          to accelerate your guitar journey.
+          Platform kami menggabungkan pembelajaran visual dengan praktik langsung 
+          untuk mempercepat perjalanan belajar Anda.
         </p>
       </div>
       <div class="features-grid">
@@ -154,8 +100,8 @@ https://templatemo.com/tm-606-string-master
               <path d="M11.5 7.5v-2M14.5 10.5h2M11.5 13.5v2M8.5 10.5h-2"/>
             </svg>
           </div>
-          <h3>Interactive Fretboard</h3>
-          <p>Visual chord diagrams that show exactly where to place your fingers. Practice anywhere, anytime.</p>
+          <h3>Kuis Interaktif</h3>
+          <p>Berbagai jenis soal yang dirancang untuk menguji pemahaman Anda. Latihan kapan saja, di mana saja.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">
@@ -165,8 +111,8 @@ https://templatemo.com/tm-606-string-master
               <path d="M10.5 9.5l4 3-4 3z" fill="currentColor"/>
             </svg>
           </div>
-          <h3>HD Video Lessons</h3>
-          <p>200+ professionally filmed lessons from beginner basics to advanced techniques.</p>
+          <h3>Cara Belajar Modern</h3>
+          <p>5000+ materi kuis dari berbagai kategori dan tingkat kesulitan.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">
@@ -176,121 +122,130 @@ https://templatemo.com/tm-606-string-master
               <path d="M12 8v4l2 2"/>
             </svg>
           </div>
-          <h3>Progress Tracking</h3>
-          <p>Set goals, track your practice time, and watch your skills improve over time.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M9 18V5l12-2v13"/>
-              <circle cx="6" cy="18" r="3"/>
-              <circle cx="18" cy="16" r="3"/>
-              <path d="M9 9l12-2"/>
-            </svg>
-          </div>
-          <h3>Song Library</h3>
-          <p>Learn your favorite songs with tabs, chords, and play-along backing tracks.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/>
-              <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
-              <line x1="12" y1="19" x2="12" y2="22"/>
-              <path d="M8 22h8"/>
-              <path d="M3 10l1.5 1.5M21 10l-1.5 1.5M3 14l1.5-1.5M21 14l-1.5-1.5"/>
-            </svg>
-          </div>
-          <h3>AI Feedback</h3>
-          <p>Get real-time feedback on your playing through our audio recognition technology.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-              <circle cx="9" cy="7" r="4"/>
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-            </svg>
-          </div>
-          <h3>Community</h3>
-          <p>Connect with fellow learners, share progress, and get tips from experienced players.</p>
+          <h3>Pelacakan Progress</h3>
+          <p>Tetapkan target, pantau waktu belajar, dan lihat perkembangan kemampuan Anda dari waktu ke waktu.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Pricing Section -->
-  <section class="pricing" id="pricing">
+  <!-- <section class="pricing" id="pricing">
     <div class="section-container">
       <div class="section-header">
-        <div class="section-label">Pricing</div>
-        <h2 class="section-title">Simple, transparent pricing</h2>
+        <div class="section-label">Harga</div>
+        <h2 class="section-title">Pilih paket yang sesuai untuk Anda</h2>
         <p class="section-description">
-          Start with a free trial. No credit card required.
+          Mulai gratis, upgrade kapan saja. Semua paket termasuk garansi uang kembali 30 hari.
         </p>
       </div>
-      <div class="billing-toggle">
-        <button class="billing-option active" data-billing="monthly">Monthly</button>
-        <button class="billing-option" data-billing="quarterly">
-          Quarterly
-          <span class="discount-badge">-15%</span>
-        </button>
-        <button class="billing-option" data-billing="yearly">
-          Yearly
-          <span class="discount-badge">-30%</span>
-        </button>
+      <div class="pricing-toggle">
+        <span>Bulanan</span>
+        <div class="toggle-switch" id="pricingToggle"></div>
+        <span>Tahunan <span class="toggle-badge">Hemat 20%</span></span>
       </div>
       <div class="pricing-grid">
         <div class="pricing-card">
-          <div class="pricing-name">Starter</div>
+          <div class="pricing-name">Gratis</div>
           <div class="pricing-price">
-            <span class="currency"></span>Free
+            <span class="currency">Rp</span>0<span class="period">/bulan</span>
           </div>
-          <div class="pricing-billed"></div>
-          <div class="pricing-savings"></div>
-          <p class="pricing-description">Perfect for trying out the basics</p>
+          <div class="pricing-billed">Selamanya gratis</div>
+          <p class="pricing-description">Sempurna untuk pemula</p>
           <ul class="pricing-features">
-            <li>10 beginner lessons</li>
-            <li>Interactive fretboard</li>
-            <li>5 songs with tabs</li>
-            <li>Community access</li>
+            <li>50 soal kuis per hari</li>
+            <li>5 kategori dasar</li>
+            <li>Pelacakan progress dasar</li>
+            <li>Akses komunitas</li>
+            <li>Mode latihan</li>
           </ul>
-          <a href="#" class="pricing-btn">Get Started</a>
+          <a href="#" class="pricing-btn">Mulai Gratis</a>
         </div>
-        <div class="pricing-card featured" id="proCard">
+        <div class="pricing-card featured">
+          <div class="pricing-badge">Paling Populer</div>
           <div class="pricing-name">Pro</div>
           <div class="pricing-price">
-            <span class="currency">$</span><span id="proPrice">30</span><span class="period">/mo</span>
+            <span class="currency">Rp</span><span id="proPrice">50.000</span><span class="period">/bulan</span>
           </div>
           <div class="pricing-billed" id="proBilled"></div>
           <div class="pricing-savings" id="proSavings"></div>
-          <p class="pricing-description">For serious learners</p>
+          <p class="pricing-description">Untuk pembelajar serius</p>
           <ul class="pricing-features">
-            <li>All 200+ video lessons</li>
-            <li>Full song library (500+)</li>
-            <li>AI feedback on playing</li>
-            <li>Progress tracking</li>
-            <li>Download lessons offline</li>
+            <li>Kuis unlimited</li>
+            <li>Semua kategori (50+)</li>
+            <li>AI feedback & analisis</li>
+            <li>Pelacakan progress lengkap</li>
+            <li>Download materi offline</li>
           </ul>
-          <a href="#" class="pricing-btn">Start Free Trial</a>
+          <a href="#" class="pricing-btn">Mulai Uji Coba Gratis</a>
         </div>
         <div class="pricing-card">
           <div class="pricing-name">Lifetime</div>
           <div class="pricing-price">
-            <span class="currency">$</span>440
+            <span class="currency">Rp</span>500.000
           </div>
-          <div class="pricing-billed">One-time payment</div>
-          <div class="pricing-savings">Best value</div>
-          <p class="pricing-description">Forever access, no recurring fees</p>
+          <div class="pricing-billed">Bayar sekali selamanya</div>
+          <div class="pricing-savings">Nilai terbaik</div>
+          <p class="pricing-description">Akses selamanya, tanpa biaya berulang</p>
           <ul class="pricing-features">
-            <li>Everything in Pro</li>
-            <li>1-on-1 coaching session</li>
-            <li>Exclusive masterclasses</li>
-            <li>Priority support</li>
-            <li>All future updates</li>
+            <li>Semua fitur Pro</li>
+            <li>Sesi coaching 1-on-1</li>
+            <li>Materi eksklusif</li>
+            <li>Prioritas support</li>
+            <li>Semua update mendatang</li>
           </ul>
-          <a href="#" class="pricing-btn">Get Lifetime Access</a>
+          <a href="#" class="pricing-btn">Dapatkan Akses Lifetime</a>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+    <!-- Testimonials Section -->
+  <section class="testimonials" id="testimonials">
+    <div class="section-container">
+      <div class="section-header">
+        <div class="section-label">Testimoni</div>
+        <h2 class="section-title">Kata pengguna kami</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Saya sudah coba beberapa platform kuis, tapi Quiz paling interaktif dan mudah digunakan. Nilai ujian saya meningkat drastis dalam 2 bulan!"</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">
+              <img src="{{ asset('images/alex-student.jpg')}}" alt="Alex Thompson">
+            </div>
+            <div>
+              <div class="testimonial-name">Andi Pratama</div>
+              <div class="testimonial-title">Siswa SMA, 3 bulan</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Saya sudah coba beberapa platform kuis, tapi Quiz paling interaktif dan mudah digunakan. Nilai ujian saya meningkat drastis dalam 2 bulan!"</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">
+              <img src="{{ asset('images/maria-student.jpg')}}" alt="Maria Garcia">
+            </div>
+            <div>
+              <div class="testimonial-name">Siti Nurhaliza</div>
+              <div class="testimonial-title">Mahasiswa, 6 bulan</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Saya sudah coba beberapa platform kuis, tapi Quiz paling interaktif dan mudah digunakan. Nilai ujian saya meningkat drastis dalam 2 bulan!"</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">
+              <img src="{{ asset('images/david-student.jpg')}}" alt="David Kim">
+            </div>
+            <div>
+              <div class="testimonial-name">Budi Santoso</div>
+              <div class="testimonial-title">Pro subscriber, 8 bulan</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -300,95 +255,24 @@ https://templatemo.com/tm-606-string-master
   <section class="instructors" id="instructors">
     <div class="section-container">
       <div class="section-header">
-        <div class="section-label">Instructors</div>
-        <h2 class="section-title">Learn from the best</h2>
+        <div class="section-label">Kategori</div>
+        <h2 class="section-title">Kategori kuis yang tersedia</h2>
         <p class="section-description">
-          Our instructors have decades of combined experience and a passion for teaching.
+          Kami menyediakan berbagai kategori kuis untuk semua tingkat kemampuan.
         </p>
       </div>
       <div class="instructors-grid">
         <div class="instructor-card">
-          <div class="instructor-image">
-            <img src="{{ asset('images/acoustic-specialist.jpg')}}" alt="Marcus Chen">
-          </div>
-          <div class="instructor-name">Marcus Chen</div>
-          <div class="instructor-role">Acoustic Specialist</div>
-          <p class="instructor-bio">15 years teaching, Berklee graduate</p>
+          <div class="instructor-name">Akademik</div><br>
+          <button type="button" class="btn btn-outline-dark" disabled>Coming soon...</button>
         </div>
         <div class="instructor-card">
-          <div class="instructor-image">
-            <img src="{{ asset('images/fingerstyle-expert.jpg')}}" alt="Sarah Williams">
-          </div>
-          <div class="instructor-name">Sarah Williams</div>
-          <div class="instructor-role">Fingerstyle Expert</div>
-          <p class="instructor-bio">YouTube educator, 2M subscribers</p>
+          <div class="instructor-name">Non Akademik</div><br>
+          <button type="button" class="btn btn-outline-dark" disabled>Coming soon...</button>
         </div>
         <div class="instructor-card">
-          <div class="instructor-image">
-            <img src="{{ asset('images/blues-rock-guitar.jpg')}}" alt="James Rodriguez">
-          </div>
-          <div class="instructor-name">James Rodriguez</div>
-          <div class="instructor-role">Blues & Rock</div>
-          <p class="instructor-bio">Session guitarist, 20+ albums</p>
-        </div>
-        <div class="instructor-card">
-          <div class="instructor-image">
-            <img src="{{ asset('images/music-theory-instructor.jpg')}}" alt="Emily Park">
-          </div>
-          <div class="instructor-name">Emily Park</div>
-          <div class="instructor-role">Music Theory</div>
-          <p class="instructor-bio">PhD in Music, award-winning educator</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials Section -->
-  <section class="testimonials" id="testimonials">
-    <div class="section-container">
-      <div class="section-header">
-        <div class="section-label">Testimonials</div>
-        <h2 class="section-title">What our students say</h2>
-      </div>
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"I've tried several apps, but StringMaster's interactive fretboard finally made chord transitions click for me. Went from zero to playing songs in 3 months!"</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">
-              <img src="{{ asset('images/alex-student.jpg')}}" alt="Alex Thompson">
-            </div>
-            <div>
-              <div class="testimonial-name">Alex Thompson</div>
-              <div class="testimonial-title">Beginner, 4 months</div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"The AI feedback feature is incredible. It's like having a personal instructor available 24/7. My fingerpicking has improved dramatically."</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">
-              <img src="{{ asset('images/maria-student.jpg')}}" alt="Maria Garcia">
-            </div>
-            <div>
-              <div class="testimonial-name">Maria Garcia</div>
-              <div class="testimonial-title">Intermediate, 1 year</div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"Worth every penny. The song library keeps me motivated, and the progress tracking shows exactly how far I've come. Highly recommend!"</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">
-              <img src="{{ asset('images/david-student.jpg')}}" alt="David Kim">
-            </div>
-            <div>
-              <div class="testimonial-name">David Kim</div>
-              <div class="testimonial-title">Pro subscriber, 8 months</div>
-            </div>
-          </div>
+          <div class="instructor-name">Umum</div><br>
+          <a href="/quiz" class="btn-secondary">Mulai Kuis</a>
         </div>
       </div>
     </div>
@@ -397,9 +281,9 @@ https://templatemo.com/tm-606-string-master
   <!-- CTA Section -->
   <section class="cta">
     <div class="section-container cta-content">
-      <h2>Ready to start your guitar journey?</h2>
-      <p>Join 50,000+ students learning guitar the modern way. Start your free trial today.</p>
-      <a href="#pricing" class="btn-primary">Start Free Trial →</a>
+      <h2>Siap memulai perjalanan kuis Anda?</h2>
+      <p>Bergabunglah dengan pengguna yang belajar dengan cara modern. Mulai kuis hari ini.</p>
+      <a href="#pricing" class="btn-primary">Mulai Kuis  →</a>
     </div>
   </section>
 
@@ -409,41 +293,14 @@ https://templatemo.com/tm-606-string-master
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="#" class="logo">
-            <div class="logo-icon">♪</div>
-            StringMaster
+            <div class="logo-icon">?</div>
+            Quiz
           </a>
-          <p>The modern way to learn guitar. Interactive lessons, real-time feedback, and a supportive community.</p>
-        </div>
-        <div>
-          <h4 class="footer-title">Product</h4>
-          <ul class="footer-links">
-            <li><a href="#">Features</a></li>
-            <li><a href="#">Pricing</a></li>
-            <li><a href="#">Song Library</a></li>
-            <li><a href="#">Mobile App</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="footer-title">Company</h4>
-          <ul class="footer-links">
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="footer-title">Support</h4>
-          <ul class="footer-links">
-            <li><a href="#">Help Center</a></li>
-            <li><a href="#">Community</a></li>
-            <li><a href="#">Terms of Service</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-          </ul>
+          <p>Platform kuis modern untuk belajar. Soal interaktif, menyenangkan, dan komunitas yang suportif.</p>
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© 2026 StringMaster. All rights reserved.</span>
+        <span>© 2026 Quiz. All rights reserved.</span>
         <span>Developed by <a href="https://www.templatemo.com" target="_blank" rel="nofollow noopener">TemplateMo</a></span>
       </div>
     </div>

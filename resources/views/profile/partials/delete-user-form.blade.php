@@ -9,6 +9,11 @@
         </p>
     </header>
 
+    <form action="{{ route('logout') }}" method="POST">
+        @csrf
+        <button type="submit" class="btn btn-outline-danger" onclick="return confirm('Apakah anda yakin akan logout?');">Logout</button>
+    </form>
+
     <x-danger-button
         x-data=""
         x-on:click.prevent="$dispatch('open-modal', 'confirm-user-deletion')"
