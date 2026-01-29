@@ -10,7 +10,10 @@ class AdminController extends Controller
 {
     public function dashboard()
     {
-        $no = 1;
+        $noUser = 1;
+        $noUmum = 1;
+        $noAdmin = 1;
+        $noKuis = 1;
         $totalUser = DB::table('users')->count();
         $totalAdmin = DB::table('users')->where('role', 'Admin')->count();
         $totalUmum = DB::table('users')->where('role', 'Umum')->count();
@@ -26,7 +29,7 @@ class AdminController extends Controller
         ->select('kuis.*', 'users.username')
         ->get();
 
-        return view('admin.dashboard', compact('no', 'showUser', 'showAdmin', 'showUmum', 'showKuis', 'totalAdmin', 'totalUmum', 'totalKuis', 'totalUser'));
+        return view('admin.dashboard', compact('noUser', 'noAdmin', 'noUmum', 'noKuis', 'showUser', 'showAdmin', 'showUmum', 'showKuis', 'totalAdmin', 'totalUmum', 'totalKuis', 'totalUser'));
     }
 
     public function showUsers()

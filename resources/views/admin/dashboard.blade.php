@@ -146,7 +146,7 @@
                   <tbody>
                     @foreach ($showUser as $user)
                     <tr class="align-middle">
-                      <td>{{ $no++ }}</td>
+                      <td>{{ $noUser++ }}</td>
                       <td>{{ $user->username }}</td>
                       <td>{{ $user->email }}</td>
                       @if ($user->role == 'Admin')
@@ -186,7 +186,7 @@
                   <tbody>
                     @foreach ($showAdmin as $admin)
                     <tr class="align-middle">
-                      <td>{{ $no++ }}</td>
+                      <td>{{ $noAdmin++ }}</td>
                       <td>{{ $admin->username }}</td>
                       <td>{{ $admin->email }}</td>
                       <td><span class="badge text-bg-danger">Admin</span></td>
@@ -221,7 +221,7 @@
                   <tbody>
                     @foreach ($showUmum as $umum)
                     <tr class="align-middle">
-                      <td>{{ $no++ }}</td>
+                      <td>{{ $noUmum++ }}</td>
                       <td>{{ $umum->username }}</td>
                       <td>
                         {{ $umum->total_kuis }}
@@ -259,7 +259,7 @@
                   <tbody>
                     @foreach ($showKuis as $kuis)
                     <tr class="align-middle">
-                      <td>{{ $no++ }}</td>
+                      <td>{{ $noKuis++ }}</td>
                       <td>{{ $kuis->username }}</td>
                       <td>{{ $kuis->judul }}</td>
                       <td>{{ $kuis->kategori }}</td>
@@ -272,7 +272,6 @@
             </div>
           </div>
           <!-- /.card -->
-
           <!--end::Col-->
         </div>
         <!--end::Row-->
